@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+  <meta name="robots" content="noarchive" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <meta name="referrer" content="origin-when-cross-origin" />
+
+  <meta name="google-signin-client_id" content="682881449370-32mrs6u8ft3tj0fdp0hr3d1qh07friav.apps.googleusercontent.com.apps.googleusercontent.com" />
+<meta name="google-signin-scope" content="profile email openid" />
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyBMaeVGV2HFZv7sK56XJIUlNU4q-X764Oo",
+    authDomain: "storyden-153518.firebaseapp.com",
+    databaseURL: "https://storyden-153518.firebaseio.com",
+    storageBucket: "storyden-153518.appspot.com",
+    messagingSenderId: "682881449370"
+  };
+  firebase.initializeApp(config);
+</script>
+<!--<script src="https://apis.google.com/js/platform.js?onload=setupGoogleSignIn" defer="defer"></script> -->
+<script src="https://apis.google.com/js/platform.js" async defer></script>
+<script src="https://cdn.firebase.com/libs/firebaseui/1.0.0/firebaseui.js"></script>
+<link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/1.0.0/firebaseui.css" />
+  <title>Campfire Log In</title>
+  <link rel="shortcut icon" href="https://launchpad-asset2.37signals.com/favicon.ico" />
+
+  <meta name="csrf-param" content="authenticity_token" />
+<meta name="csrf-token" content="JLOOJWuVygRM9B6OFQtYMOwDnZU1RpOdOY3wh/H6xiOtqEoox1u4CCxz4Rl67HWroXB6vjbnjBtwiBq5F5cWVw==" />
+  <link rel="stylesheet" media="all" href="https://launchpad-asset2.37signals.com/assets/desktop-32a9dc4bb86220ac97c76c37648f9587.css" />
+  <script src="https://launchpad-asset0.37signals.com/assets/desktop-6361891fb5d60f91a3399f742f4373d7.js"></script>
+</head>
+
+<body class="login campfire ">
+
+  
+<div class="brand-wrapper" data-state="username">
+  <div class="balloon">
+    <div class="hide--when-loading txt--left">
+      <h1>Log in to Campfire</h1>
+
+
+      <form data-behavior="google_login" onsubmit="Login.loginLoading()" action="/session" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value="6qYcDFGatIWW+00qJw6vsUrW+k80zXsmI3Uc9RyLGBVjvdgB/VTGifZ8sr1I6YIqB6UdZDdsZKBqcPbL+ubIYQ==" />
+        <input type="hidden" name="product" id="product" value="campfire" />
+
+<input type="hidden" name="remember_me" id="remember_me" value="true" />
+
+        <input type="hidden" name="google_token" id="google_token" value="" data-behavior="google_token" /><div class="g-signin2" data-onsuccess="onSignIn"></div>
+
+</form>
+
+      <div class="break txt--center txt--subtle push--top push_half--bottom">
+        <div class="break__content">Or, use my email address</div>
+      </div>
+
+      
+
+      <form data-behavior="login_form" data-identity-type-lookup-url="/session/lookup_identity_type" action="/session" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value="8KWX9leYESF44cDVNDGFVkdIapAI0Odjwif/mjAyf7N5vlP7+1ZjLRhmP0Jb1qjNCjuNuwtx+OWLIhWk1l+vxw==" />
+        <input type="hidden" name="product" id="product" value="campfire" />
+
+
+<input type="hidden" name="remember_me" id="remember_me" value="true" />
+
+        <div class="field">
+  <label class="field__label" for="username">Email or username</label>
+  <input type="text" name="username" id="username" value="" autocomplete="on" autocorrect="off" autocapitalize="off" class="input--text" placeholder="e.g. julie@widgetco.com" data-role="username" data-original-value="" />
+</div>
+
+<div class="push_half--bottom" style="display: none; margin-top: -13.6px;" data-role="unrecognized_notice_container">
+  <small class="txt--red">We couldn&rsquo;t find that one. Want to try another?</small>
+</div>
+
+<div class="push_half--bottom" style="display: none; margin-top: -13.6px;" data-role="authenticates_with_google_notice_container">
+  <small class="txt--red">Oops, you need to click the Google button up top ↑</small>
+</div>
+
+<div class="field" style="display: none;" data-role="password_container">
+  <label class="field__label" for="password">Password</label>
+  <input type="password" name="password" id="password" autocomplete="off" autocorrect="off" autocapitalize="off" class="input--text" />
+</div>
+
+<button name="button" type="button" class="action_button" data-role="next_button">Next</button>
+
+<input type="submit" name="commit" value="Log in" class="action_button" style="display: none;" data-role="login_button" disabled="disabled" />
+
+</form>    </div>
+
+    <h1 class="hide--unless-loading">Logging you in&hellip;</h1>
+    <div class="loading hide--unless-loading" id="progressBar"></div>
+  </div>
+
+  <div class="footer">
+    <strong>Help:</strong> <a href="/campfire/forgot_password">Reset your password</a>
+  </div>
+</div>
+
+<div class="dont-have-account">
+    Don't have a Campfire account? <strong>Sign up today</strong>.
+</div>
+
+<script src="https://www.gstatic.com/firebasejs/3.6.4/firebase.js"></script>
+
+
+<script>
+//<![CDATA[
+
+    $('username').focus();
+
+//]]>
+</script>    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5XQQKL"
+        height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+      new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-5XQQKL');</script>
+    </iframe></noscript>
+
+</body>
+</html>
